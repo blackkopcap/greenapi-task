@@ -15,7 +15,7 @@
     "@nestjs/platform-express": "^9.0.0",
     "@nestjs/serve-static": "^4.0.2",
     "@types/hbs": "^4.0.4",
-    "hbs": "^4.2.0",
+    "hbs": "4.2.0",
     "node-fetch": "^2.6.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.0.0"
