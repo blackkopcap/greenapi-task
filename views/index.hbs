@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="form-container">
+        <div class="form-group">
+            <label for="idInstance">idInstance:</label>
+            <input type="text" id="idInstance">
+        </div>
+        <div class="form-group">
+            <label for="apiTokenInstance">ApiTokenInstance:</label>
+            <input type="text" id="apiTokenInstance">
+        </div>
+        <div class="button-group">
+            <button onclick="getSettings()">getSettings</button>
+            <button onclick="getStateInstance()">getStateInstance</button>
+        </div>
+        <div class="form-group">
+            <label for="sendMessageChatId">ChatId:</label>
+            <input type="text" id="sendMessageChatId">
+        </div>
+        <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" rows="4"></textarea>
+        </div>
+        <div class="button-group">
+            <button onclick="sendMessage()">sendMessage</button>
+        </div>
+        <div class="form-group">
+            <label for="sendFileByUrlChatId">ChatId:</label>
+            <input type="text" id="sendFileByUrlChatId">
+        </div>
+        <div class="form-group">
+            <label for="urlFile">URL File:</label>
+            <input type="text" id="urlFile">
+        </div>
+        <div class="button-group">
+            <button onclick="sendFileByUrl()">sendFileByUrl</button>
+        </div>
+    </div>
+    <div class="response-container">
+        <label for="response">Ответ:</label>
+        <pre><code id="response" class="json"></code></pre>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/languages/json.min.js"></script>
+<script>hljs.highlightAll();</script>
+<script src="/app.js"></script>
+</body>
+</html>

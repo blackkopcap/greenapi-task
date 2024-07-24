@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  traefik:
+    image: traefik:v2.4
+    command:
+      - "--api.insecure=true"
+      - "--providers.docker=true"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - web
+
+  app:
+    build:
+      context: .
+    image: greenapi-nestjs
+    container_name: greenapi-nestjs
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.greenapi.rule=Host(`greenapi.gx101.ru`)"
+      - "traefik.http.services.greenapi.loadbalancer.server.port=3000"
+    networks:
+      - web
+    expose:
+      - "3000"
+
+networks:
+  web:
+    external: true
