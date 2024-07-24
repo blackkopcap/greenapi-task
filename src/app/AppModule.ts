@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { GreenApiModule } from './modules/greenapi/GreenApiModule';
+import { GreenApiModule } from './modules/GreenApi/GreenApiModule';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from "path";
 
